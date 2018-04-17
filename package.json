@@ -1,5 +1,27 @@
 {
+  "name": "webpack-core-concepts",
+  "description": "Files from following Sean Larkin's Webpack Academy courses  https://webpack.academy/",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaderpixel/webpack-academy.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Richard Lock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shaderpixel/webpack-academy/issues"
+  },
+  "homepage": "https://github.com/Shaderpixel/webpack-academy#readme",
   "devDependencies": {
-    "webpack": "^4.5.0"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
   }
 }
