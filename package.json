@@ -3,7 +3,9 @@
   "description": "Files from following Sean Larkin's Webpack Academy courses  https://webpack.academy/",
   "version": "1.0.0",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "babel-preset-env": "^1.6.1"
+  },
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch"
@@ -22,6 +24,8 @@
   },
   "homepage": "https://github.com/Shaderpixel/webpack-academy#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
     "file-loader": "^1.1.11",
     "image-webpack-loader": "^4.2.0",
     "webpack": "^4.5.0",

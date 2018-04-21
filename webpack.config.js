@@ -3,15 +3,21 @@
  */
 const path = require('path');
 const ExamplePlugin = require('./ExamplePlugin.js');
-const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
+
     entry: './src/index.js',
+
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+
+		// optimization: {
+		// 		minimizer: []
+		// },
+
 		module: {
     		rules: [
 						{
@@ -28,9 +34,20 @@ module.exports = {
 												}
 										}
 								]
+						},
+						{
+								test: /\.js$/,
+								exclude: /(node_modules)/,
+								use: {
+										loader: 'babel-loader',
+										options: {
+												// presets: ['babel-preset-env'] //specified through .babelrc
+										}
+								}
 						}
 				]
 		},
+
 		plugins: [
 			new ExamplePlugin(),
 		]
