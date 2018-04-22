@@ -10,7 +10,11 @@
     "webpack-dev-server": "^3.1.3"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "build:verbose": "yarn build -- --verbose",
+    "build:log": "yarn build --env.foo=1 --env.bar=2",
+    "watch": "yarn build -- --watch",
+    "debug": "yarn build -- --env.debug=1"
   },
   "repository": {
     "type": "git",
