@@ -2,3 +2,4 @@ node_modules
 assets/build
 .DS_store
 *.xml
+yarn-error.log
