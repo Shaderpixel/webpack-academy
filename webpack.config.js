@@ -20,7 +20,7 @@ const addons = (addonsArg) => {         // addonsArg could be a string or array
 };
 
 
-module.exports = (env) => {
+module.exports = (env = 'common') => {
 		console.log(env);
 
 		const envConfig = require(`./build-utils/webpack.${env.env}`);

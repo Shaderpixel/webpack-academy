@@ -22,7 +22,9 @@
     "build:prod:bundlebuddy": "yarn build:prod --env.addons=bundlebuddy",
     "build:prod:bundleanalyze": "yarn build:prod --env.addons=bundleanalyze",
     "build:prod": "yarn build --env.env=prod",
-    "build:allAddons": "yarn build:prod --env.addons=bundlebuddy --env.addons=bundleanalyze",
+    "build:allAddons": "yarn build:prod --env.addons=firstplugin --env.addons=bundleanalyze",
+    "build:prod:firstplugin": "yarn build:prod --env.addons=firstplugin",
+
     "build": "webpack",
     "webpack-defaults": "webpack-defaults"
   },
