@@ -14,9 +14,16 @@ const addons = (addonsArg) => {         // addonsArg could be a string or array
 				.concat.apply([], [addonsArg])	// Normalize array of addons (flattens the array)
 				.filter(Boolean); 							// If addons is undefined or falsy, filter it out of the array
 
-		//------------------------------  	// Create message for missing addons
-
-		return addons.map((addonName) => require(`./build-utils/addons/webpack.${addonName}.js`)); // map array of addonNames to an array of addon paths
+		return addons.map((addonName) => {
+					try {
+							require(`./build-utils/addons/webpack.${addonName}.js`)
+					}
+					catch(error) {
+							console.error(`--------------------------------------------------\nCannot locate addon -> [${addonName}] in build-utils`);
+							throw error;
+					}
+				}
+		); // map array of addonNames to an array of addon path
 };
 
 
