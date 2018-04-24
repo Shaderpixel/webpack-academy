@@ -27,11 +27,15 @@ const addons = (addonsArg) => {         // addonsArg could be a string or array
 };
 
 
-module.exports = (env = {env:'common'}) => {
+module.exports = (env) => {
 		console.log(env);
 
-		const envConfig = require(`./build-utils/webpack.${env.env}`);
-		const mergedConfig = webpackMerge(commonConfig, envConfig, ...addons(env.addons)); // spread env.addons array or single value into addons
+		const envConfig = env == null ? '' : env.env ? require(`./build-utils/webpack.${env.env}`): null;
+		const envAddons = env == null ? '' : env.addons ? addons(env.addons): [];
+
+
+		// const envConfig = (env.env == undefined ? require(`./build-utils/webpack.${env.env}`) : ''; // if env.env is null then replace undefined with null
+		const mergedConfig = webpackMerge(commonConfig, envConfig, ...envAddons); // spread env.addons array or single value into addons
 
 		console.log(mergedConfig);
 		return mergedConfig;
