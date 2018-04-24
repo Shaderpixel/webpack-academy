@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "bundle-buddy-webpack-plugin": "^0.3.0",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.15",
@@ -26,7 +27,6 @@
     "build:allAddons": "yarn build:prod --env.addons=firstplugin --env.addons=bundleanalyze",
     "build:prod:firstplugin": "yarn build:prod --env.addons=firstplugin",
     "debug:prod": "yarn debug --env.env=prod",
-
     "debug": "node --inspect-brk ./node_modules/webpack/bin/webpack.js",
     "build": "webpack",
     "webpack-defaults": "webpack-defaults"
