@@ -1,3 +1,5 @@
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+
 const config = {
 	mode: 'production',
 	devtool: "source-map",
@@ -5,10 +7,18 @@ const config = {
 		rules: [
 				{
 						test:/\.css/,
-						use: ['style-loader', 'css-loader']
+						use: ExtractTextWebpackPlugin.extract(
+								{
+										use: 'css-loader',
+										fallback: 'style-loader'
+								}
+						)
 				}
 		]
-	}
+	},
+	plugins: [
+			new ExtractTextWebpackPlugin("style.css")
+	]
 
 };
 
