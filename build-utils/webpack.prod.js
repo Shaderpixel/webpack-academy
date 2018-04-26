@@ -1,4 +1,5 @@
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 const config = {
 	mode: 'production',
@@ -17,7 +18,14 @@ const config = {
 		]
 	},
 	plugins: [
-			new ExtractTextWebpackPlugin("style.css")
+			new ExtractTextWebpackPlugin("style.css"),
+			new CompressionWebpackPlugin({
+					asset: "[path].gz[query]",
+					algorithm: "gzip",
+					test: /\.(js|html|css)$/,
+					threshold: 10240,
+					minRatio: 0.8
+			})
 	]
 
 };

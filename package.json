@@ -1,11 +1,12 @@
 {
-  "name": "web-fundayarmentals",
+  "name": "web-fundamentals",
   "version": "1.0.0",
   "description": "Files for following Larkin's Webpack: Web Fundamentals course",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "bundle-buddy-webpack-plugin": "^0.3.0",
+    "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
